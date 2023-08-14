@@ -105,6 +105,6 @@ export default function ComboBoxGroup({ items = peopleMock, title, selectedPerso
 ComboBoxGroup.propTypes = {
   items: PropTypes.array,
   title: PropTypes.string,
-  selectedPerson: PropTypes.string,
+  selectedPerson: PropTypes.object,
   setSelectedPerson: PropTypes.func
 }

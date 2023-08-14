@@ -76,6 +76,6 @@ export default function ComboBox({ items = peopleMock, title, selectedPerson, se
 ComboBox.propTypes = {
   items: PropTypes.array,
   title: PropTypes.string,
-  selectedPerson: PropTypes.string,
+  selectedPerson: PropTypes.object,
   setSelectedPerson: PropTypes.func
 }
