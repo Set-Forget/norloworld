@@ -55,8 +55,13 @@ export default function ComboBoxGroup({ items = peopleMock, title, selectedPerso
             }
           }}
           displayValue={(person) => person?.name}
-          onBlur={() => {
-            setQuery('');  
+          onBlur={(e) => {
+            if (
+              !e.relatedTarget ||
+              !e.relatedTarget.classList.contains("optionclass")
+            ) {
+              setQuery("");
+            }
           }}
         />
         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
@@ -79,7 +84,7 @@ export default function ComboBoxGroup({ items = peopleMock, title, selectedPerso
                     value={person}
                     className={({ active }) =>
                       classNames(
-                        'relative cursor-default select-none py-2 pl-3 pr-9',
+                        'relative cursor-default select-none py-2 pl-3 pr-9 optionclass',
                         active ? 'bg-emerald-700 text-white' : 'text-gray-900'
                       )
                     }
